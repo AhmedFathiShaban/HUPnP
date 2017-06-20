@@ -512,7 +512,7 @@ qint32 HTransportSinkService::setStateVariables(
 
     if (reader.readNextStartElement())
     {
-        if (reader.name().compare("stateVariableValuePairs", Qt::CaseInsensitive) != 0)
+        if (reader.name().compare(QLatin1String("stateVariableValuePairs"), Qt::CaseInsensitive) != 0)
         {
             return UpnpInvalidArgs;
         }

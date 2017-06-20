@@ -27,6 +27,13 @@ CONFIG(USE_QT_INSTALL_LOC) {
 	system(echo "CONFIG += USE_QT_INSTALL_LOC" >> hupnp_av/options.pri)
 }
 
+win32-g++ {
+   QMAKE_CXXFLAGS += -Werror
+}
+win32-msvc*{
+   QMAKE_CXXFLAGS += /WX
+}
+
 !CONFIG(DISABLE_CORE) : SUBDIRS += hupnp
 !CONFIG(DISABLE_AV) : SUBDIRS += hupnp_av
 !CONFIG(DISABLE_TESTAPP) : SUBDIRS += apps/simple_test-app

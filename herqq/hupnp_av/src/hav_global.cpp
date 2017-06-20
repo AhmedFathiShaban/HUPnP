@@ -647,7 +647,7 @@ HStateVariableCollection parseStateVariableCollection(const QString& arg)
     addNamespaces(reader);
 
     if (!reader.readNextStartElement() ||
-        reader.name().compare("stateVariableValuePairs", Qt::CaseInsensitive) != 0)
+        reader.name().compare(QLatin1String("stateVariableValuePairs"), Qt::CaseInsensitive) != 0)
     {
         return retVal;
     }
